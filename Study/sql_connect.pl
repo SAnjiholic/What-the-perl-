@@ -1,12 +1,10 @@
 use DBI;
 
-=eod
 ####################################################################
 # DB connect
-my $dbs = "dbi:ODBC:driver={SQL Server};database="database name";server="serverip"";
+my $dbs = "dbi:ODBC:driver={SQL Server};database='database name";server="serverip"";
 my ($username, $password) = ('id', 'password');
 my $dbh = DBI ->connect($dbs, $username, $password);
-my $sql = << 'END_SQL';
 ####################################################################
 
 #Create table
@@ -38,6 +36,7 @@ $dbh->do('update "table_name" SET field = ? where field = ?',
 
 ####################################################################
 
+
 #select
 
 my $sql = 'SELECT field FROM table_name WHERE field > ? AND field < ?';
@@ -60,4 +59,3 @@ while (my $row = $sth->fetchrow_hashref) {
 ####################################################################
 
 
-=cut

@@ -105,8 +105,9 @@ $starting->add("Label", -text => "Start measurement",
 
 
 
-         
+        
 MainLoop;
+ 
 #----------------------------------------------------------------------------------------------
 
 
@@ -157,6 +158,7 @@ sub register{
 #----------------------------------------------------------------------------------------------
 sub start{
 		my $t1=threads->new(\&sub1,1);
+		$1=>death;
 		 $entry2->delete('0', 'end');
  
    my $button;
@@ -316,5 +318,5 @@ sub sub1{
 	#Its Waring
 		MouseMoveAbsPix($width1, $height1);
 		SendMouse('{LEFTCLICK}{LEFTCLICK}');
-		return 0;
+		exit;
 }
