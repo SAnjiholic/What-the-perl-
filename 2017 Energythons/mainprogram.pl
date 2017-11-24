@@ -14,6 +14,7 @@ use threads::shared;
 
 my $logpwd = getcwd."/log.txt";
 
+
 #----------------------------------------------------------------------------------------------
 my $location=tkinit;
 $location->withdraw;
