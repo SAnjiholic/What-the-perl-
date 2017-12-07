@@ -5,9 +5,10 @@ $A = <STDIN>;
 $AA = $A / 36 ;
 $AAA = $A % 36;
 &calc($AAA);
-print $f;
+
 
 sub calc{
+
 	$_ = $_[0] % 36;
 
 	if($_ == '1'){
