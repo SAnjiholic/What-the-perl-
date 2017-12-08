@@ -19,9 +19,9 @@ $dbh = DBI->connect($dsn, $user,$password) or  die "Got error $DBI::errstr when 
 
 print 'insert id : ';chomp($id=<STDIN>);
 print 'insert pw : ';chomp($pw=<STDIN>);
-print 'insert purpose (ssh,ftp,db): ';chomp($purpose=<STDIN>);
+print 'insert purpose (ssh or ftp): ';chomp($purpose=<STDIN>);
 
 
 
 $sth= $dbh->prepare(q {insert into member values (?,?,?)});
-$sth-> execute($id,$pw,$purpose) or die "aa";
+$sth-> execute($id,$pw,$purpose) 
