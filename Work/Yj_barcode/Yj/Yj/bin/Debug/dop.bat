@@ -1,0 +1,1 @@
+copy 1.txt \\127.0.0.1\ZDesignerGT800C
