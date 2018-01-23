@@ -1,0 +1,7 @@
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\bin\Release\Inout.exe
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\bin\Release\Inout.pdb
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Release\Inout.Form1.resources
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Release\Inout.Properties.Resources.resources
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Release\Inout.csproj.GenerateResource.Cache
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Release\Inout.exe
+C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Release\Inout.pdb
