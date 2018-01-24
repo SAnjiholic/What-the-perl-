@@ -19,7 +19,7 @@ namespace Yj
         {
             InitializeComponent();
 
-            string connectionString = "server =211.110.139.11; uid = 'springwd1718_fun2'; pwd= 'funsys@11'; database = 'springwd1718_fun2';";
+            string connectionString = "server =IP; uid = 'ID'; pwd= 'PW'; database = 'DBN';";
             SqlConnection scon = new SqlConnection(connectionString);
             SqlCommand scom = new SqlCommand();
             scom.Connection = scon;
