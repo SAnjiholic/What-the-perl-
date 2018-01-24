@@ -1,3 +1,5 @@
+#!/usr/bin/perl --
+
 use strict;
 use Digest::MD5  qw(md5_hex);
 my $md5_data = "1";

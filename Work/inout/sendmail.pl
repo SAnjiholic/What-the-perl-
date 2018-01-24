@@ -30,11 +30,7 @@ my $today = "$year/$mon/$mday";
 
 &addmd($md5_hash,$mailname,$today);
 
-
-
 my $eax = $md5_hash;
-
-
 
 my $email = Email::Simple->create(
       header => [
@@ -55,8 +51,6 @@ my $sender = Email::Send->new(
   )
 eval { $sender->send($email) };
 die "Error sending email: $@" if $@;
-
-
 
 sub addmd{
 	my $md = shift;
@@ -79,5 +73,4 @@ sub addmd{
 				undef,
 				$name,$date,$md);
 		}
-
 

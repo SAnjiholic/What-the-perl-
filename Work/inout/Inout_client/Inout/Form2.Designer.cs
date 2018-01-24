@@ -60,6 +60,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "취소";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -81,7 +82,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 25);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "123456789012345678901234567890123456789";
             // 
             // label1
             // 
@@ -100,7 +100,7 @@
             this.ClientSize = new System.Drawing.Size(531, 167);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "MAde SAnjiHolic";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

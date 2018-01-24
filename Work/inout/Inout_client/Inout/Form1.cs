@@ -32,5 +32,12 @@ namespace Inout
             Form2 dlg = new Form2();
             dlg.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
+            Form3 dlg = new Form3();
+            dlg.ShowDialog();
+        }
     }
 }
