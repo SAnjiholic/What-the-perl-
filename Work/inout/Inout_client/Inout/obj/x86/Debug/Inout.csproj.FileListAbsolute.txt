@@ -23,3 +23,5 @@ C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.csproj.Gene
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\bin\Debug\Inout.exe
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\bin\Debug\Inout.pdb
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form3.resources
+C:\Users\SA\Desktop\Git\What-The-Perl-\Work\inout\Inout_client\Inout\obj\x86\Debug\Inout.exe
+C:\Users\SA\Desktop\Git\What-The-Perl-\Work\inout\Inout_client\Inout\obj\x86\Debug\Inout.pdb
