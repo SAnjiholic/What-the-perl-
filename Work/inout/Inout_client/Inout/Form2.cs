@@ -35,7 +35,7 @@ namespace Inout
             int flag = 0;
             String USER_MAC = "";
             String mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
-            string connectionString = "server = 127.0.0.1; uid = 'root'; pwd='asdd'; database = 'test';";
+            string connectionString = "server = 192.168.0.220; uid = 'root'; pwd='asdd'; database = 'IO_CHECK';";
             MySqlConnection scon = new MySqlConnection(connectionString);
             MySqlCommand scom = new MySqlCommand();
             scom.Connection = scon;
@@ -82,9 +82,9 @@ namespace Inout
                 }
 
                 if (flag == 1)
-                {  
-
-                    scom.CommandText = "select MAC from MEMBER where NUMBER = " + Num;
+                {
+                    int NUM = int.Parse(Num);
+                    scom.CommandText = "select MAC from MEMBER where NUMBER='" + Num + "'";
                     scon.Open();
                     MySqlDataReader CHKM = scom.ExecuteReader();
                     while (CHKM.Read())
@@ -94,10 +94,13 @@ namespace Inout
                     scon.Close();
                     if (USER_MAC == mac)
                     {
+                        scon.Open();
+
+
                         string dd = DateTime.Now.ToString("yyyy/MM/dd");
                         string tt = DateTime.Now.ToString("HH:mm:ss");
-                        scom.CommandText = "update IO_CHECK set 'IN'='" + tt + "' where NUMBER='" + Num +"'and DATE='"+dd+"'";
-                        scon.Open();
+                        scom.CommandText = "update IO_CHECK set `INTIME`='" + tt + "' where NUMBER='" + Num +"' and DATE='"+dd+"'";
+                        scom.ExecuteNonQuery();
                         MessageBox.Show("출근이 처리되었습니다.");
                     }
                     else

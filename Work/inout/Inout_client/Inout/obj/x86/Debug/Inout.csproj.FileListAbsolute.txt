@@ -1,27 +1,13 @@
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\bin\Debug\Inout.exe
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\bin\Debug\Inout.pdb
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Debug\Inout.Form1.resources
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Debug\Inout.Properties.Resources.resources
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Debug\Inout.csproj.GenerateResource.Cache
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Debug\Inout.exe
-C:\Users\SA\AppData\Local\Temporary Projects\Inout\obj\x86\Debug\Inout.pdb
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\obj\x86\Debug\Inout.exe
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\obj\x86\Debug\Inout.pdb
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\bin\Debug\Inout.exe
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\bin\Debug\Inout.pdb
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\obj\x86\Debug\Inout.Form1.resources
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\obj\x86\Debug\Inout.Form2.resources
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\obj\x86\Debug\Inout.Properties.Resources.resources
-C:\Users\SA\documents\visual studio 2010\Projects\Inout\Inout\obj\x86\Debug\Inout.csproj.GenerateResource.Cache
-C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.exe
-C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.pdb
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\bin\Debug\Inout.exe
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\bin\Debug\Inout.pdb
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.csprojResolveAssemblyReference.cache
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form1.resources
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form2.resources
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form3.resources
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form4.resources
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form5.resources
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Properties.Resources.resources
 C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.csproj.GenerateResource.Cache
-C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\bin\Debug\Inout.exe
-C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\bin\Debug\Inout.pdb
-C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form3.resources
-C:\Users\SA\Desktop\Git\What-The-Perl-\Work\inout\Inout_client\Inout\obj\x86\Debug\Inout.exe
-C:\Users\SA\Desktop\Git\What-The-Perl-\Work\inout\Inout_client\Inout\obj\x86\Debug\Inout.pdb
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.exe
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.pdb
+C:\Users\SA\Desktop\출퇴근\Inout_client\Inout\obj\x86\Debug\Inout.Form6.resources

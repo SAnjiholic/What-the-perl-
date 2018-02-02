@@ -12,7 +12,7 @@ namespace Inout
     public partial class Form1 : Form
     {
         public Form1()
-        {   string mac;
+        {   
             InitializeComponent();
             
 
@@ -28,15 +28,30 @@ namespace Inout
 
         private void button1_Click(object sender, EventArgs e)
         {
-           String mac= NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
-            Form2 dlg = new Form2();
+            Form5 dlg = new Form5();
             dlg.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            String mac = NetworkInterface.GetAllNetworkInterfaces()[0].GetPhysicalAddress().ToString();
             Form3 dlg = new Form3();
+            dlg.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form4 dlg = new Form4();
+            dlg.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form6 dlg = new Form6();
             dlg.ShowDialog();
         }
     }
