@@ -64,9 +64,11 @@ namespace Inout
             
                 scom.CommandText = "select * from IOT where DATE>='"+sDate1+"' and DATE<='"+sDate2+"' order by DATE,NUMBER";
             }
-            else if (radioButton2.Checked){
+            else if (radioButton2.Checked)
+            {
                 scom.CommandText = "select * from IOT where DATE>='" + sDate1 + "' and DATE<='" + sDate2 + "' order by NUMBER,DATE";
             }
+            else { scom.CommandText = "select * from IOT where DATE>='" + sDate1 + "' and DATE<='" + sDate2 + "' order by DATE,NUMBER"; }
             scon.Open();
             MySqlDataReader qur = scom.ExecuteReader();
 
