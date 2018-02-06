@@ -59,8 +59,14 @@ namespace Inout
 
             string sDate1 = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string sDate2 = dateTimePicker2.Value.ToString("yyyy-MM-dd");
-
-            scom.CommandText = "select * from IOT where DATE>='"+sDate1+"' and DATE<='"+sDate2+"'";
+            
+            if (radioButton1.Checked) {
+            
+                scom.CommandText = "select * from IOT where DATE>='"+sDate1+"' and DATE<='"+sDate2+"' order by DATE,NUMBER";
+            }
+            else if (radioButton2.Checked){
+                scom.CommandText = "select * from IOT where DATE>='" + sDate1 + "' and DATE<='" + sDate2 + "' order by NUMBER,DATE";
+            }
             scon.Open();
             MySqlDataReader qur = scom.ExecuteReader();
 
@@ -79,12 +85,22 @@ namespace Inout
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
 
-            
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Application.OpenForms["Form6"].Close();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
