@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
                 printf("my Net Address : %s\n", inet_ntoa(net_addr));
                 printf("my Netmask : %s\n---------------------------\n\n", inet_ntoa(mask_addr));
 
-				char file[]= "lecture_http_header.pcap";
+				char file[]= "httpGet.pcap";
 				char *err;
 				pcap_t *pcap = pcap_open_offline(file, err);
 				for(i=0;(data= pcap_next(pcap, &header))!=NULL;i++){
