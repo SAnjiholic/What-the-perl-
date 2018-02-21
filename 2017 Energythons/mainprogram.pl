@@ -60,97 +60,78 @@ my $id = 1000000;
 #----------------------------------------------------------------------------------------------
 
 $main = MainWindow->new();
-			
-			
-
 
 $main->Button(	-text   =>"Registration",
-				-command=>\&register,
-				-width=>15,
-				#-height=>5
-				-font => "Arial 20")   ->pack();#-side=>"top");
+		-command=>\&register,
+		-width=>15,
+		#-height=>5
+		-font => "Arial 20")->pack();#-side=>"top");
 $main->Button(	-text   =>"start",
-				-command=>\&start,
-				-width=>15,
-				#-height=>5,
-				-font => "Arial 20") ->pack();#-side=>"left");
+		-command=>\&start,
+		-width=>15,
+		#-height=>5,
+		-font => "Arial 20") ->pack();#-side=>"left");
 $main->Button(  -text   =>"Quit",
-				-command=>sub{exit},
-				-width=>15,
-				#-height=>'5'
-				-font => "Arial 20")->pack(-side=>"bottom");
+		-command=>sub{exit},
+		-width=>15,
+		#-height=>'5'
+		-font => "Arial 20")->pack(-side=>"bottom");
 $main->geometry("250x150");
 $main->bind('<Return>', \&start); 
 #----------------------------------------------------------------------------------------------
-$dialog      = $main->DialogBox(-title   => "Register",
-                        -buttons=> ["Register", "Cancle"],);
+$dialog = $main->DialogBox(-title   => "Register",-buttons=> ["Register", "Cancle"],);
 $dialog->add("Label",	-text => "Name",
-						-font => "Arial 15")->pack();
-$entry  = $dialog ->add("Entry", -width => 35)->pack();
+			-font => "Arial 15")->pack();
+$entry = $dialog ->add("Entry", -width => 35)->pack();
 #----------------------------------------------------------------------------------------------
-$startbut   = $main->DialogBox(-title  => "Scan your Barcode",
-                        -buttons=> ["OK", "Cancle"],);
+$startbut = $main->DialogBox(-title  => "Scan your Barcode",-buttons=> ["OK", "Cancle"],);
 $startbut->add("Label", -text => "Barcode Scan"	,
-						-font => "Arial 15")->pack();
+			-font => "Arial 15")->pack();
 $entry2 = $startbut ->add("Entry", -width => 35)->pack();
 $entry2->{'default_button'};
 #$entry2 = $startbut ->add("focus", default_button=>$entry2)->pack();
 
 #----------------------------------------------------------------------------------------------
 
-$starting   = $main->DialogBox(-title   => "Start measurement",
-                        -buttons=> ["Save","Count"],);
-$starting->add("Label", -text => "Start measurement",
-						-font => "Arial 20")->pack();
+$starting   = $main->DialogBox(-title   => "Start measurement", -buttons=> ["Save","Count"],);
+$starting->add("Label", -text => "Start measurement",-font => "Arial 20")->pack();
 #$entry3  = $starting ->add("Entry", -width => 35)->pack();
-
-
-
         
 MainLoop;
- 
 #----------------------------------------------------------------------------------------------
-
 
 sub register{
    my $button;
    my $done = 0;
    do{
       $button = $dialog->Show;
-
-      if   ($button eq "Register"){
+      if ($button eq "Register"){
          my $name = $entry->get;
-
-         if   (defined($name)   &&   length($name)){
-                                     
-            $dbh->do('INSERT INTO test (name) VALUES (?)',
-            undef,
-            $name);
-
+         if (defined($name) && length($name)){
+            $dbh->do('INSERT INTO test (name) VALUES (?)',undef,$name);
             my $newname="\'".$name."\'"; 
-          my $sth = $dbh->prepare("SELECT * FROM test WHERE name = $newname");
+	    my $sth = $dbh->prepare("SELECT * FROM test WHERE name = $newname");
                $sth->execute;
          
-               while ( my @row = $sth->fetchrow_array ) {
-				   &madelog;
-               &barcode($row[0],$row[1]);
-               open FH, ">>", "$logpwd" or die "$!\n";
-			   print FH &now;
-			   print FH "$row[0]th users joined. \n";
-			   close FH;
-			  # print "ID : $row[0] | Name : $row[1] | Cycle : $row[2]\n";
-               $done = 1;}
-                    
-			&rgsmsg;
-            $done = 1;
-            }
+        while (	my @row = $sth->fetchrow_array ) {
+		&madelog;
+		&barcode($row[0],$row[1]);
+		open FH, ">>", "$logpwd" or die "$!\n";
+		print FH &now;
+		print FH "$row[0]th users joined. \n";
+		close FH;
+		 # print "ID : $row[0] | Name : $row[1] | Cycle : $row[2]\n";
+               	$done = 1;
+	} 
+	&rgsmsg;
+        $done = 1;
+	}
           #  else{
-           #    print "you didnt give me your name\n";
+           # print "you didnt give me your name\n";
             #   }
       }
-      else{
-       #  print"Sorry you edcided not to register.\n";
-         $done = 1;
+      else{ #print"Sorry you edcided not to register.\n";
+            $done = 1;
       }
    }
    until $done;
@@ -158,50 +139,32 @@ sub register{
 
 #----------------------------------------------------------------------------------------------
 sub start{
-		my $t1=threads->new(\&sub1,1);
-		$1=>death;
-		 $entry2->delete('0', 'end');
- 
-   my $button;
-   my $done = 0;
+	my $t1=threads->new(\&sub1,1);
+	$1=>death;
+	$entry2->delete('0', 'end');
+	my $button;
+	my $done = 0;
   
-  do{	  
-   
-      $button = $startbut->Show;
-	
- 
-
-	
-		if($button eq "OK"){
-		  
-   
-         my $id = $entry2->get;
-		 if($id){
+  do{
+	$button = $startbut->Show;
+	if( $button eq "OK"){	  
+        	my $id = $entry2->get;
+		if($id){
 			if($id){
-               my $idnum = $id;
-               my $sth = $dbh->prepare("SELECT * FROM test where  id = $idnum");
-               $sth->execute;
-               while ( my @row = $sth->fetchrow_array ) {
-	
-			   open FH, ">>", "$logpwd" or die "$!\n";
-			   print FH &now;
-			   print FH "$row[0]-$row[1] login. cycle:$row[2] \n";
-			   close FH;
-			   $done = 1;
-			 
-            &starting($row[0],$row[1],$row[2]);
-			 
-            }
-            
-            }
-                  
-      }}
-			else{$done = 1;}
-		
-		
- }
-   until $done;
-   }
+				my $idnum = $id;
+              			my $sth = $dbh->prepare("SELECT * FROM test where  id = $idnum");
+              			$sth->execute;
+			while ( my @row = $sth->fetchrow_array ) {
+					open FH, ">>", "$logpwd" or die "$!\n";
+			  	 	print FH &now;
+					print FH "$row[0]-$row[1] login. cycle:$row[2] \n";
+					close FH;
+					$done = 1;
+           				&starting($row[0],$row[1],$row[2]);
+				}}}	
+		else{$done = 1;}}
+	until $done;
+}
 
 
 #----------------------------------------------------------------------------------------------
@@ -218,9 +181,7 @@ sub starting{
    do{     
 	   while(1){
 		$button = $starting->Show;
-    
-	  if   ($button eq "Save"){
-		  
+    		 if ($button eq "Save"){
 		  unless($name){$name=$_[0]}
 		  else{my $name = $entry->get;}
 			   
@@ -228,8 +189,7 @@ sub starting{
 			   print FH &now;
 			   print FH "$_[0]-$_[1] saved. add cycle:$count total cycle : $newcycle\n";
 			   close FH;
-		 		
-		last;
+			last;
 		  }
       
 	  elsif ($button eq "Count") {
@@ -240,13 +200,7 @@ sub starting{
 			$newcycle,
 			$_[0]
 			);
-		  
-
-	
-		  
-		
 		  }}
-		  
 		  &okmsg($_[1],$count,$newcycle);
 		  }}
 
@@ -290,13 +244,9 @@ PDF::Reuse::Barcode::Code128(
 	x => 0,
 	y => 300,
 	size=>5.0,
-    value => $code,
-	prolong => 2.96
-   );
- 
-prEnd();
-}
-}
+    	value => $code,
+	prolong => 2.96);
+prEnd();}}
 #----------------------------------------------------------------------------------------------
 
 sub madelog{
