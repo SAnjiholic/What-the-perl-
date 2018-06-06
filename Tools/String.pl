@@ -9,7 +9,7 @@ while ($buf16Len = read(IN, $buf16, $size)) {
 	@buf16Array = unpack "C*", $buf16;
 	$chkren = 3	if ($chkren == 0);
 	for (my $i = 0; $i < $buf16Len; $i++) {
-		if ($buf16Array[$i] > 32 & $buf16Array[$i] < 126) {
+		if ($buf16Array[$i] > 19 & $buf16Array[$i] < 127 | $buf16Array[$i]==20) {
 			$tmp_ren .= chr($buf16Array[$i]); $flag++;
 			}
 		else {
